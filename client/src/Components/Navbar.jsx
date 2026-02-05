@@ -36,13 +36,19 @@ export default function Navbar({ toggleDrawer }) {
 
         {/* Middle section: Navigation links */}
         <div className="hidden md:flex items-center gap-8">
-          {["Home", "Courses", "Features", "About", "Contact"].map((item) => (
+          {[
+            { title: "Home", path: "/" },
+            { title: "Courses", path: "/courses" },
+            { title: "My Courses", path: "/user/my-courses" },
+            { title: "About", path: "/about" },
+            { title: "Contact", path: "/contact" },
+          ].map((item) => (
             <Link
-              key={item}
-              to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+              key={item.title}
+              to={item.path}
               className="text-gray-600 dark:text-gray-300 font-medium hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
             >
-              {item}
+              {item.title}
             </Link>
           ))}
         </div>
