@@ -27,8 +27,8 @@ export default function MyCourses() {
         <Layout>
             <section className="min-h-screen py-12 px-4 lg:px-8 relative overflow-hidden">
                 {/* Background elements */}
-                <div className="absolute top-10 left-10 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-5 animate-pulse-slow"></div>
-                <div className="absolute bottom-10 right-10 w-48 h-48 bg-green-500 rounded-full mix-blend-multiply filter blur-3xl opacity-5 animate-pulse-slow"></div>
+                <div className="absolute top-10 left-10 w-64 h-64 bg-primary-500 rounded-full mix-blend-multiply filter blur-3xl opacity-5 animate-pulse-slow"></div>
+                <div className="absolute bottom-10 right-10 w-48 h-48 bg-secondary-500 rounded-full mix-blend-multiply filter blur-3xl opacity-5 animate-pulse-slow"></div>
 
                 <div className="max-w-7xl mx-auto relative z-10">
                     {/* Header */}
@@ -39,7 +39,7 @@ export default function MyCourses() {
                         transition={{ duration: 0.8 }}
                     >
                         <motion.div
-                            className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-blue-500 to-green-500 rounded-full mb-6"
+                            className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full mb-6"
                             initial={{ scale: 0 }}
                             animate={{ scale: 1 }}
                             transition={{ duration: 0.6, delay: 0.2, type: "spring" }}
@@ -57,13 +57,13 @@ export default function MyCourses() {
                         {/* Stats */}
                         <div className="flex justify-center space-x-6 mt-8">
                             <div className="text-center">
-                                <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
+                                <div className="text-2xl font-bold text-primary-600 dark:text-primary-400">
                                     {courses?.length || 0}
                                 </div>
                                 <div className="text-sm text-gray-600 dark:text-gray-400">Enrolled Courses</div>
                             </div>
                             <div className="text-center">
-                                <div className="text-2xl font-bold text-green-600 dark:text-green-400">
+                                <div className="text-2xl font-bold text-secondary-600 dark:text-secondary-400">
                                     {courses?.length > 0
                                         ? Math.min(100, Math.round(
                                             courses.reduce((acc, course) => {
@@ -122,7 +122,7 @@ export default function MyCourses() {
                                                 {/* Progress Badge */}
                                                 <div className="absolute top-3 right-3">
                                                     <div className="bg-white/95 dark:bg-base-100/95 backdrop-blur-sm px-2 py-1 rounded-full shadow-sm">
-                                                        <span className="text-xs font-bold text-blue-600 dark:text-blue-400">
+                                                        <span className="text-xs font-bold text-primary-600 dark:text-primary-400">
                                                             {percent}%
                                                         </span>
                                                     </div>
@@ -130,7 +130,7 @@ export default function MyCourses() {
 
                                                 {/* Category Badge */}
                                                 <div className="absolute top-3 left-3">
-                                                    <span className="px-2 py-1 bg-blue-500 text-white text-xs font-medium rounded-md shadow-sm">
+                                                    <span className="px-2 py-1 bg-primary-500 text-white text-xs font-medium rounded-md shadow-sm">
                                                         {course?.category}
                                                     </span>
                                                 </div>
@@ -138,7 +138,7 @@ export default function MyCourses() {
 
                                             {/* Content */}
                                             <div className="p-5 flex flex-col flex-grow">
-                                                <h3 className="text-lg font-bold text-gray-900 dark:text-white line-clamp-2 mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-200">
+                                                <h3 className="text-lg font-bold text-gray-900 dark:text-white line-clamp-2 mb-2 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-200">
                                                     {course?.title}
                                                 </h3>
 
@@ -150,13 +150,13 @@ export default function MyCourses() {
                                                 <div className="mb-4">
                                                     <div className="flex justify-between items-center mb-2">
                                                         <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Progress</span>
-                                                        <span className="text-sm font-bold text-blue-600 dark:text-blue-400">
+                                                        <span className="text-sm font-bold text-primary-600 dark:text-primary-400">
                                                             {completedCount}/{totalLectures} lectures
                                                         </span>
                                                     </div>
                                                     <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
                                                         <motion.div
-                                                            className="bg-gradient-to-r from-blue-500 to-green-500 h-2 rounded-full"
+                                                            className="bg-gradient-to-r from-primary-500 to-secondary-500 h-2 rounded-full"
                                                             initial={{ width: 0 }}
                                                             animate={{ width: `${percent}%` }}
                                                             transition={{ duration: 1, delay: index * 0.1 }}
@@ -167,7 +167,7 @@ export default function MyCourses() {
                                                 {/* Stats */}
                                                 <div className="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400 mb-4 pt-4 border-t border-gray-100 dark:border-gray-700">
                                                     <div className="flex items-center space-x-1">
-                                                        <FaBookOpen className="text-blue-500 text-xs" />
+                                                        <FaBookOpen className="text-primary-500 text-xs" />
                                                         <span>{totalLectures} lectures</span>
                                                     </div>
                                                 </div>
@@ -175,7 +175,7 @@ export default function MyCourses() {
                                                 {/* Action Button */}
                                                 <button
                                                     onClick={() => navigate("/course/displaylectures", { state: { ...course } })}
-                                                    className="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 text-sm flex items-center justify-center space-x-2 mt-auto"
+                                                    className="w-full bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 text-sm flex items-center justify-center space-x-2 mt-auto"
                                                 >
                                                     <FaPlay className="text-sm" />
                                                     <span>Continue Learning</span>

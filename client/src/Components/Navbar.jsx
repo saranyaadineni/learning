@@ -25,10 +25,10 @@ export default function Navbar({ toggleDrawer }) {
             </button>
           )}
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="bg-purple-600 p-2 rounded-xl group-hover:bg-purple-700 transition-colors">
+            <div className="bg-primary-600 p-2 rounded-xl group-hover:bg-primary-700 transition-colors">
               <FaGraduationCap size={24} className="text-white" />
             </div>
-            <span className="text-2xl font-bold text-gray-900 dark:text-white tracking-tight group-hover:text-purple-600 transition-colors">
+            <span className="text-2xl font-bold text-gray-900 dark:text-white tracking-tight group-hover:text-primary-600 transition-colors">
               LearnHub
             </span>
           </Link>
@@ -46,7 +46,7 @@ export default function Navbar({ toggleDrawer }) {
             <Link
               key={item.title}
               to={item.path}
-              className="text-gray-600 dark:text-gray-300 font-medium hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
+              className="text-gray-600 dark:text-gray-300 font-medium hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
             >
               {item.title}
             </Link>
@@ -57,19 +57,19 @@ export default function Navbar({ toggleDrawer }) {
         <div className="hidden md:flex items-center gap-4">
           {isLoggedIn ? (
             <>
-              <Link to="/user/profile" className="text-gray-700 dark:text-gray-200 font-semibold hover:text-purple-600 transition-colors">
+              <Link to="/user/profile" className="text-gray-700 dark:text-gray-200 font-semibold hover:text-primary-600 transition-colors">
                 Profile
               </Link>
-              <button onClick={onLogout} className="bg-purple-600 text-white px-6 py-2.5 rounded-full font-semibold hover:bg-purple-700 transition-all shadow-lg shadow-purple-200 dark:shadow-purple-900/20">
+              <button onClick={onLogout} className="bg-primary-600 text-white px-6 py-2.5 rounded-full font-semibold hover:bg-primary-700 transition-all shadow-lg shadow-primary-200 dark:shadow-primary-900/20">
                 Logout
               </button>
             </>
           ) : (
             <>
-              <Link to="/login" className="text-gray-700 dark:text-gray-200 font-semibold hover:text-purple-600 transition-colors">
+              <Link to="/login" className="text-gray-700 dark:text-gray-200 font-semibold hover:text-primary-600 transition-colors">
                 Log In
               </Link>
-              <Link to="/signup" className="bg-purple-600 text-white px-6 py-2.5 rounded-full font-semibold hover:bg-purple-700 transition-all shadow-lg shadow-purple-200 dark:shadow-purple-900/20">
+              <Link to="/signup" className="bg-primary-600 text-white px-6 py-2.5 rounded-full font-semibold hover:bg-primary-700 transition-all shadow-lg shadow-primary-200 dark:shadow-primary-900/20">
                 Get Started
               </Link>
             </>

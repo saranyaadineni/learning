@@ -28,7 +28,7 @@ export default function EnrolledStudents() {
 
     return (
         <Layout>
-            <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50/40 to-pink-50/30 dark:from-slate-900 dark:via-purple-900/20 dark:to-indigo-900/30">
+            <div className="min-h-screen bg-gradient-to-br from-primary-50 via-secondary-50/40 to-accent-50/30 dark:from-slate-900 dark:via-secondary-900/20 dark:to-primary-900/30">
                 {/* Header */}
                 <div className="bg-white/90 dark:bg-slate-800/90 backdrop-blur-xl border-b border-white/20 dark:border-slate-700/30 shadow-lg sticky top-0 z-50">
                     <div className="max-w-7xl mx-auto px-6 py-5">
@@ -46,11 +46,11 @@ export default function EnrolledStudents() {
 
                             {/* Centered Content */}
                             <div className="flex-1 text-center">
-                                <h1 className="text-3xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                                <h1 className="text-3xl font-bold bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
                                     Enrolled Students
                                 </h1>
                                 <p className="text-slate-600 dark:text-slate-300 mt-1 text-sm font-medium">
-                                    Course: <span className="font-bold text-purple-600 dark:text-purple-400">{state?.title}</span>
+                                    Course: <span className="font-bold text-secondary-600 dark:text-secondary-400">{state?.title}</span>
                                 </p>
                             </div>
 
@@ -72,11 +72,11 @@ export default function EnrolledStudents() {
                         <div className="p-8 border-b border-slate-200 dark:border-slate-700 flex items-center justify-between flex-wrap gap-4">
                             <div>
                                 <h2 className="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-3">
-                                    <FaUserGraduate className="text-indigo-500" />
+                                    <FaUserGraduate className="text-primary-500" />
                                     Student List
                                 </h2>
                                 <p className="text-slate-600 dark:text-slate-400 mt-1">
-                                    Total Enrolled: <span className="font-bold text-indigo-600 dark:text-indigo-400">{students.length}</span>
+                                    Total Enrolled: <span className="font-bold text-primary-600 dark:text-primary-400">{students.length}</span>
                                 </p>
                             </div>
                         </div>
@@ -119,7 +119,7 @@ export default function EnrolledStudents() {
                                                 </td>
                                                 <td className="px-6 py-4 whitespace-nowrap">
                                                     <div className="flex items-center gap-3">
-                                                        <div className="w-8 h-8 rounded-full bg-gradient-to-r from-indigo-400 to-purple-400 flex items-center justify-center text-white font-bold text-xs uppercase shadow-sm">
+                                                        <div className="w-8 h-8 rounded-full bg-gradient-to-r from-primary-400 to-secondary-400 flex items-center justify-center text-white font-bold text-xs uppercase shadow-sm">
                                                             {student.fullName?.charAt(0) || 'U'}
                                                         </div>
                                                         <span className="text-sm font-medium text-slate-900 dark:text-white">{student.fullName}</span>
@@ -139,7 +139,7 @@ export default function EnrolledStudents() {
                                                         </div>
                                                         <div className="w-full bg-slate-200 dark:bg-slate-600 rounded-full h-2">
                                                             <div 
-                                                                className="bg-gradient-to-r from-blue-500 to-indigo-600 h-2 rounded-full transition-all duration-500" 
+                                                                className="bg-gradient-to-r from-primary-500 to-secondary-600 h-2 rounded-full transition-all duration-500" 
                                                                 style={{ width: `${percent}%` }}
                                                             ></div>
                                                         </div>
@@ -148,7 +148,7 @@ export default function EnrolledStudents() {
                                                 <td className="px-6 py-4 whitespace-nowrap">
                                                     {finalAssignment ? (
                                                         <div className="flex items-center gap-2">
-                                                            <FaTrophy className={`text-sm ${assignmentPercent >= 65 ? 'text-yellow-500' : 'text-slate-400'}`} />
+                                                            <FaTrophy className={`text-sm ${assignmentPercent >= 65 ? 'text-accent-500' : 'text-slate-400'}`} />
                                                             <span className={`text-sm font-bold ${assignmentPercent >= 65 ? 'text-green-600 dark:text-green-400' : 'text-red-500 dark:text-red-400'}`}>
                                                                 {assignmentScore}/{totalAssignments} ({assignmentPercent}%)
                                                             </span>
@@ -164,7 +164,7 @@ export default function EnrolledStudents() {
                                                         <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-green-100 text-green-800 border border-green-200 dark:bg-green-900/30 dark:text-green-400 dark:border-green-800">
                                                             <FaCheckCircle /> Issued
                                                         </span> :
-                                                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-yellow-100 text-yellow-800 border border-yellow-200 dark:bg-yellow-900/30 dark:text-yellow-400 dark:border-yellow-800">
+                                                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-accent-100 text-accent-800 border border-accent-200 dark:bg-accent-900/30 dark:text-accent-400 dark:border-accent-800">
                                                             <FaChartLine /> In Progress
                                                         </span>
                                                     }

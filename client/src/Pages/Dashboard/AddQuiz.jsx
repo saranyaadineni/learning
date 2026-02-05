@@ -154,10 +154,10 @@ export default function AddQuiz() {
             <section className="flex flex-col gap-6 items-center py-8 px-3 min-h-[100vh]">
                 <form onSubmit={onFormSubmit} className="flex flex-col dark:bg-base-100 gap-7 rounded-lg md:py-5 py-7 md:px-7 px-3 md:w-[750px] w-full shadow-custom dark:shadow-xl">
                     <header className="flex items-center justify-center relative">
-                        <button className="absolute left-2 text-xl text-green-500" onClick={() => navigate(-1)}>
+                        <button className="absolute left-2 text-xl text-primary-500" onClick={() => navigate(-1)}>
                             <AiOutlineArrowLeft />
                         </button>
-                        <h1 className="text-center dark:text-purple-500 md:text-4xl text-2xl font-bold font-inter">
+                        <h1 className="text-center dark:text-secondary-500 md:text-4xl text-2xl font-bold font-inter">
                             {isEditing ? "Edit Quiz Question" : "Add New Quiz"}
                         </h1>
                     </header>
@@ -182,16 +182,20 @@ export default function AddQuiz() {
                             onChange={handleInputChange}
                             placeholder="Copy exact text of correct option"
                         />
-                        <div className="flex gap-2">
-                            <button type="submit" className="btn btn-primary w-full py-2 font-semibold text-lg">
-                                {isEditing ? "Update Quiz" : "Add Quiz"}
-                            </button>
-                            {isEditing && (
-                                <button type="button" onClick={cancelEdit} className="btn btn-secondary w-1/3 py-2 font-semibold text-lg">
-                                    Cancel
-                                </button>
-                            )}
-                        </div>
+                        <button
+                            type="button"
+                            onClick={handleAddQuestion}
+                            className="w-full py-3 border-2 border-dashed border-gray-300 rounded-lg text-gray-600 hover:border-primary-500 hover:text-primary-600 transition-colors duration-300 flex items-center justify-center gap-2 font-medium"
+                        >
+                            <FiPlus /> Add Another Question
+                        </button>
+
+                        <button
+                            type="submit"
+                            className="w-full bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5"
+                        >
+                            Create Quiz
+                        </button>
                     </div>
                 </form>
 
@@ -204,7 +208,7 @@ export default function AddQuiz() {
                                 {existingQuizzes.map((quiz, index) => (
                                     <div key={index} className="border p-4 rounded bg-white dark:bg-base-100 shadow-md relative">
                                         <div className="absolute top-4 right-4 flex gap-3">
-                                            <button onClick={() => handleEdit(quiz)} className="text-blue-500 hover:text-blue-700 text-xl">
+                                            <button onClick={() => handleEdit(quiz)} className="text-primary-500 hover:text-primary-700 text-xl">
                                                 <FaEdit />
                                             </button>
                                             <button onClick={() => handleDelete(quiz._id)} className="text-red-500 hover:text-red-700 text-xl">

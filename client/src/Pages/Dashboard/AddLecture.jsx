@@ -184,7 +184,7 @@ export default function AddLecture() {
 
   return (
     <Layout>
-      <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50/40 to-pink-50/30 dark:from-slate-900 dark:via-purple-900/20 dark:to-indigo-900/30">
+      <div className="min-h-screen bg-gradient-to-br from-primary-50 via-secondary-50/40 to-accent-50/30 dark:from-slate-900 dark:via-primary-900/20 dark:to-secondary-900/30">
         {/* Header */}
         <div className="bg-white/90 dark:bg-slate-800/90 backdrop-blur-xl border-b border-white/20 dark:border-slate-700/30 shadow-lg">
           <div className="max-w-7xl mx-auto px-6 py-5">
@@ -202,7 +202,7 @@ export default function AddLecture() {
 
               {/* Centered Content */}
               <div className="flex-1 text-center">
-                <h1 className="text-3xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                <h1 className="text-3xl font-bold bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
                   Add New Lecture
                 </h1>
                 <p className="text-slate-600 dark:text-slate-300 mt-1 text-sm font-medium">
@@ -232,7 +232,7 @@ export default function AddLecture() {
             >
               {/* Form Header */}
               <div className="text-center mb-8">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center shadow-lg mx-auto mb-4">
+                <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-primary-600 rounded-2xl flex items-center justify-center shadow-lg mx-auto mb-4">
                   <FaVideo className="text-white text-2xl" />
                 </div>
                 <h2 className="text-2xl font-bold text-slate-900 dark:text-white">
@@ -286,7 +286,7 @@ export default function AddLecture() {
                             <button
                               type="button"
                               onClick={() => videoRef.current.click()}
-                              className="bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 shadow-lg hover:shadow-xl"
+                              className="bg-gradient-to-r from-primary-500 to-secondary-600 hover:from-primary-600 hover:to-secondary-700 text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 shadow-lg hover:shadow-xl"
                             >
                               Choose File
                             </button>
@@ -384,7 +384,7 @@ export default function AddLecture() {
                       {/* Google Drive URL */}
                       <div>
                         <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2 flex items-center gap-2">
-                          <FaGoogleDrive className="text-blue-500" />
+                          <FaGoogleDrive className="text-primary-500" />
                           Google Drive URL
                         </label>
                         <input
@@ -430,7 +430,7 @@ export default function AddLecture() {
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 disabled:from-slate-400 disabled:to-slate-500 text-white font-semibold py-4 px-8 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl disabled:cursor-not-allowed disabled:shadow-none flex items-center justify-center gap-3 text-lg"
+                  className="w-full bg-gradient-to-r from-primary-500 to-secondary-600 hover:from-primary-600 hover:to-secondary-700 disabled:from-slate-400 disabled:to-slate-500 text-white font-semibold py-4 px-8 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl disabled:cursor-not-allowed disabled:shadow-none flex items-center justify-center gap-3 text-lg"
                 >
                   {isLoading ? (
                     <>

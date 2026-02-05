@@ -53,9 +53,9 @@ export default function AdminDashboard() {
       {
         label: "User Details",
         data: [allUsersCount, subscribedCount],
-        backgroundColor: ["yellow", "green"],
+        backgroundColor: ["#8b5cf6", "#ec4899"],
         borderWidth: 1,
-        borderColor: ["yellow", "green"],
+        borderColor: ["#8b5cf6", "#ec4899"],
       },
     ],
   };
@@ -74,13 +74,14 @@ export default function AdminDashboard() {
       "Oct",
       "Nov",
       "Dec",
+      "Jan",
     ],
     fontColor: "white",
     datasets: [
       {
         label: "Sales / Month",
         data: monthlySalesRecord,
-        backgroundColor: ["red"],
+        backgroundColor: ["#f97316"],
         borderColor: ["white"],
         borderWidth: 2,
       },
@@ -165,30 +166,30 @@ export default function AdminDashboard() {
 
                 <div className="grid grid-cols-2 gap-4">
                   <motion.div
-                    className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 p-4 rounded-xl border border-blue-200 dark:border-blue-800"
+                    className="bg-gradient-to-br from-primary-50 to-primary-100 dark:from-primary-900/20 dark:to-primary-800/20 p-4 rounded-xl border border-primary-200 dark:border-primary-800"
                     whileHover={{ scale: 1.05 }}
                     transition={{ type: "spring", stiffness: 400 }}
                   >
                     <div className="flex items-center justify-between">
                       <div>
-                        <p className="text-blue-600 dark:text-blue-400 font-semibold text-sm">Registered</p>
-                        <h4 className="text-2xl font-bold text-blue-800 dark:text-blue-200">{allUsersCount}</h4>
+                        <p className="text-primary-600 dark:text-primary-400 font-semibold text-sm">Registered</p>
+                        <h4 className="text-2xl font-bold text-primary-800 dark:text-primary-200">{allUsersCount}</h4>
                       </div>
-                      <FaUsers className="text-blue-500 text-3xl" />
+                      <FaUsers className="text-primary-500 text-3xl" />
                     </div>
                   </motion.div>
 
                   <motion.div
-                    className="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 p-4 rounded-xl border border-green-200 dark:border-green-800"
+                    className="bg-gradient-to-br from-secondary-50 to-secondary-100 dark:from-secondary-900/20 dark:to-secondary-800/20 p-4 rounded-xl border border-secondary-200 dark:border-secondary-800"
                     whileHover={{ scale: 1.05 }}
                     transition={{ type: "spring", stiffness: 400 }}
                   >
                     <div className="flex items-center justify-between">
                       <div>
-                        <p className="text-green-600 dark:text-green-400 font-semibold text-sm">Subscribed</p>
-                        <h4 className="text-2xl font-bold text-green-800 dark:text-green-200">{subscribedCount}</h4>
+                        <p className="text-secondary-600 dark:text-secondary-400 font-semibold text-sm">Subscribed</p>
+                        <h4 className="text-2xl font-bold text-secondary-800 dark:text-secondary-200">{subscribedCount}</h4>
                       </div>
-                      <FaUsers className="text-green-500 text-3xl" />
+                      <FaUsers className="text-secondary-500 text-3xl" />
                     </div>
                   </motion.div>
                 </div>
@@ -238,16 +239,16 @@ export default function AdminDashboard() {
 
                 <div className="grid grid-cols-2 gap-4">
                   <motion.div
-                    className="bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-900/20 dark:to-orange-800/20 p-4 rounded-xl border border-orange-200 dark:border-orange-800"
+                    className="bg-gradient-to-br from-accent-50 to-accent-100 dark:from-accent-900/20 dark:to-accent-800/20 p-4 rounded-xl border border-accent-200 dark:border-accent-800"
                     whileHover={{ scale: 1.05 }}
                     transition={{ type: "spring", stiffness: 400 }}
                   >
                     <div className="flex items-center justify-between">
                       <div>
-                        <p className="text-orange-600 dark:text-orange-400 font-semibold text-sm">Subscriptions</p>
-                        <h4 className="text-2xl font-bold text-orange-800 dark:text-orange-200">{subscribedCount}</h4>
+                        <p className="text-accent-600 dark:text-accent-400 font-semibold text-sm">Subscriptions</p>
+                        <h4 className="text-2xl font-bold text-accent-800 dark:text-accent-200">{subscribedCount}</h4>
                       </div>
-                      <FcSalesPerformance className="text-orange-500 text-3xl" />
+                      <FcSalesPerformance className="text-accent-500 text-3xl" />
                     </div>
                   </motion.div>
 
@@ -354,7 +355,7 @@ export default function AdminDashboard() {
                       <td className="px-6 py-4">
                         <div className="flex items-center gap-2">
                           <motion.button
-                            className="p-2 bg-green-500 hover:bg-green-600 text-white rounded-lg transition-colors duration-200"
+                            className="p-2 bg-primary-500 hover:bg-primary-600 text-white rounded-lg transition-colors duration-200"
                             onClick={() => navigate("/course/displaylectures", { state: { ...course } })}
                             title="View Lectures"
                             whileHover={{ scale: 1.1 }}
@@ -363,7 +364,7 @@ export default function AdminDashboard() {
                             <BsCollectionPlayFill className="text-lg" />
                           </motion.button>
                           <motion.button
-                            className="p-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors duration-200"
+                            className="p-2 bg-secondary-500 hover:bg-secondary-600 text-white rounded-lg transition-colors duration-200"
                             onClick={() => navigate("/course/students", { state: { ...course } })}
                             title="View Enrolled Students"
                             whileHover={{ scale: 1.1 }}

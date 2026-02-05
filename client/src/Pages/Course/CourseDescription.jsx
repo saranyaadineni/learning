@@ -24,10 +24,10 @@ export default function CourseDescription() {
       <div className="min-h-screen bg-white dark:bg-gray-900">
         
         {/* HERO SECTION - Updated Colors */}
-        <div className="bg-blue-600 dark:bg-blue-800 text-white relative overflow-hidden">
+        <div className="bg-primary-600 dark:bg-primary-800 text-white relative overflow-hidden">
             {/* Background Decor */}
-            <div className="absolute top-0 right-0 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
-            <div className="absolute bottom-0 left-0 w-72 h-72 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
+            <div className="absolute top-0 right-0 w-96 h-96 bg-primary-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
+            <div className="absolute bottom-0 left-0 w-72 h-72 bg-secondary-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
 
             <div className="max-w-7xl mx-auto px-4 lg:px-8 py-12 lg:py-16 relative z-10">
                 <motion.div 
@@ -39,10 +39,10 @@ export default function CourseDescription() {
                     {/* Hero Content (Left 2/3) */}
                     <div className="lg:col-span-2 space-y-6">
                         {/* Breadcrumbs */}
-                        <div className="flex items-center space-x-2 text-sm text-blue-100">
+                        <div className="flex items-center space-x-2 text-sm text-primary-100">
                             <button onClick={() => navigate("/courses")} className="hover:text-white transition-colors font-medium">Courses</button>
                             <span>/</span>
-                            <span className="text-blue-100">{state?.category}</span>
+                            <span className="text-primary-100">{state?.category}</span>
                             <span>/</span>
                             <span className="truncate max-w-[200px] text-white font-semibold">{state?.title}</span>
                         </div>
@@ -53,22 +53,22 @@ export default function CourseDescription() {
                         </h1>
 
                         {/* Short Description */}
-                        <p className="text-lg text-blue-100 leading-relaxed max-w-2xl line-clamp-2">
+                        <p className="text-lg text-primary-100 leading-relaxed max-w-2xl line-clamp-2">
                             {state?.description?.split('.')[0] + '.'}
                         </p>
 
                         {/* Ratings & Meta */}
                         <div className="flex flex-wrap items-center gap-4 text-sm sm:text-base">
-                            <div className="flex items-center space-x-1 text-yellow-400">
+                            <div className="flex items-center space-x-1 text-accent-400">
                                 <span className="font-bold text-lg">{state?.rating || 0}</span>
-                                <div className="flex text-yellow-400">
+                                <div className="flex text-accent-400">
                                     {[...Array(5)].map((_, i) => (
-                                        <FaStar key={i} className={i < (state?.rating || 0) ? "text-yellow-400" : "text-blue-300"} />
+                                        <FaStar key={i} className={i < (state?.rating || 0) ? "text-accent-400" : "text-primary-300"} />
                                     ))}
                                 </div>
                             </div>
-                            <div className="hidden sm:block text-blue-300">|</div>
-                            <div className="flex items-center space-x-2 text-blue-100">
+                            <div className="hidden sm:block text-primary-300">|</div>
+                            <div className="flex items-center space-x-2 text-primary-100">
                                 <FaUser />
                                 <span>Created by <span className="text-white font-semibold">{state?.createdBy}</span></span>
                             </div>
@@ -80,14 +80,14 @@ export default function CourseDescription() {
                             {isEnrolled ? (
                                 <button
                                     onClick={() => navigate("/course/displaylectures", { state: { ...state } })}
-                                    className="w-full bg-white text-blue-600 font-bold py-3 px-6 rounded-lg hover:bg-gray-100 transition-all flex items-center justify-center space-x-2"
+                                    className="w-full bg-white text-primary-600 font-bold py-3 px-6 rounded-lg hover:bg-gray-100 transition-all flex items-center justify-center space-x-2"
                                 >
                                     <FaPlay /> <span>Continue Learning</span>
                                 </button>
                             ) : (
                                 <button
                                     onClick={() => navigate("/checkout", { state: { coursePrice: state?.price, courseId: state?._id } })}
-                                    className="w-full bg-yellow-500 text-gray-900 font-bold py-3 px-6 rounded-lg hover:bg-yellow-400 transition-all flex items-center justify-center space-x-2 shadow-lg"
+                                    className="w-full bg-gradient-to-r from-accent-500 to-accent-600 text-gray-900 font-bold py-3 px-6 rounded-lg hover:from-accent-600 hover:to-accent-700 transition-all flex items-center justify-center space-x-2 shadow-lg"
                                 >
                                     <FaRupeeSign /> <span>Enroll Now</span>
                                 </button>
@@ -118,7 +118,7 @@ export default function CourseDescription() {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 {state.learningObjectives.map((objective, index) => (
                                     <div key={index} className="flex items-start space-x-3">
-                                        <FaCheckCircle className="text-green-500 mt-1 flex-shrink-0" />
+                                        <FaCheckCircle className="text-primary-500 mt-1 flex-shrink-0" />
                                         <span className="text-gray-700 dark:text-gray-300 text-sm">{objective}</span>
                                     </div>
                                 ))}
@@ -138,11 +138,11 @@ export default function CourseDescription() {
                     <div className="pt-6 border-t border-gray-200 dark:border-gray-700">
                         <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Instructor</h2>
                         <div className="flex items-start space-x-4">
-                            <div className="w-16 h-16 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center text-blue-600 dark:text-blue-300 text-2xl font-bold">
+                            <div className="w-16 h-16 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center text-primary-600 dark:text-primary-300 text-2xl font-bold">
                                 {state?.createdBy?.charAt(0) || <FaUser />}
                             </div>
                             <div>
-                                <div className="text-lg font-bold text-blue-600 dark:text-blue-400">{state?.createdBy}</div>
+                                <div className="text-lg font-bold text-primary-600 dark:text-primary-400">{state?.createdBy}</div>
                                 <p className="text-gray-500 dark:text-gray-400 text-sm">Course Instructor</p>
                             </div>
                         </div>
@@ -186,7 +186,7 @@ export default function CourseDescription() {
                                 {isEnrolled ? (
                                     <button
                                         onClick={() => navigate("/course/displaylectures", { state: { ...state } })}
-                                        className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-all flex items-center justify-center space-x-2"
+                                        className="w-full bg-primary-600 hover:bg-primary-700 text-white font-bold py-3 px-6 rounded-lg transition-all flex items-center justify-center space-x-2"
                                     >
                                         <FaPlay />
                                         <span>Go to Course</span>
@@ -194,7 +194,7 @@ export default function CourseDescription() {
                                 ) : (
                                     <button
                                         onClick={() => navigate("/checkout", { state: { coursePrice: state?.price, courseId: state?._id } })}
-                                        className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 px-6 rounded-lg transition-all shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40 flex items-center justify-center space-x-2"
+                                        className="w-full bg-primary-600 hover:bg-primary-700 text-white font-bold py-3.5 px-6 rounded-lg transition-all shadow-lg shadow-primary-500/20 hover:shadow-primary-500/40 flex items-center justify-center space-x-2"
                                     >
                                         <FaRupeeSign />
                                         <span>Enroll Now</span>

@@ -86,8 +86,8 @@ export default function AssignmentPage() {
         <Layout>
              <section className="min-h-screen py-8 px-4 lg:px-8 relative overflow-hidden">
                 {/* Background elements */}
-                <div className="absolute top-10 left-10 w-64 h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-5 animate-pulse-slow"></div>
-                <div className="absolute bottom-10 right-10 w-48 h-48 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-5 animate-pulse-slow"></div>
+                <div className="absolute top-10 left-10 w-64 h-64 bg-primary-500 rounded-full mix-blend-multiply filter blur-3xl opacity-5 animate-pulse-slow"></div>
+                <div className="absolute bottom-10 right-10 w-48 h-48 bg-secondary-500 rounded-full mix-blend-multiply filter blur-3xl opacity-5 animate-pulse-slow"></div>
 
                 <div className="max-w-7xl mx-auto relative z-10">
                     {/* Breadcrumb */}
@@ -100,14 +100,14 @@ export default function AssignmentPage() {
                         <nav className="flex items-center space-x-2 text-sm text-gray-600 dark:text-gray-400">
                             <button
                                 onClick={() => navigate("/courses")}
-                                className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
+                                className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
                             >
                                 Courses
                             </button>
                             <span>/</span>
                             <button
                                 onClick={() => navigate(-1)}
-                                className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
+                                className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
                             >
                                 Course
                             </button>
@@ -136,7 +136,7 @@ export default function AssignmentPage() {
                                             animate={{ scale: 1 }}
                                             transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
                                         >
-                                            <FaTrophy className={`mx-auto text-6xl mb-4 ${isPassed ? 'text-yellow-500' : 'text-gray-400'}`} />
+                                            <FaTrophy className={`mx-auto text-6xl mb-4 ${isPassed ? 'text-accent-500' : 'text-gray-400'}`} />
                                         </motion.div>
                                         <h2 className="text-4xl lg:text-5xl font-bold gradient-text">
                                             {isPassed ? "Assignment Passed!" : "Assignment Failed"}

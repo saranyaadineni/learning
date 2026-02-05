@@ -38,7 +38,7 @@ export default function ForgotPassword() {
           noValidate
           className="flex flex-col dark:bg-base-100 gap-4 rounded-lg md:py-5 py-7 md:px-7 px-3 md:w-[500px] w-full shadow-custom dark:shadow-xl  "
         >
-          <h1 className="text-center dark:text-purple-500 text-4xl font-bold font-inter">
+          <h1 className="text-center dark:text-primary-500 text-4xl font-bold font-inter">
             Forgot Password Page
           </h1>
 
@@ -55,7 +55,7 @@ export default function ForgotPassword() {
           {/* submit btn */}
           <button
             type="submit"
-            className="mt-2 bg-yellow-500 text-white dark:text-base-200  transition-all ease-in-out duration-300 rounded-md py-2 font-nunito-sans font-[500]  text-lg cursor-pointer"
+            className="mt-2 bg-primary-600 hover:bg-primary-700 text-white dark:text-white transition-all ease-in-out duration-300 rounded-md py-2 font-nunito-sans font-[500] text-lg cursor-pointer"
             disabled={isLoading}
           >
             {isLoading ? "sending email..." : "Send Email"}
@@ -63,13 +63,13 @@ export default function ForgotPassword() {
 
           {/* link */}
           <p className="text-center font-inter text-gray-500 dark:text-slate-300">
-            Back to profile ?{" "}
+            Remember your password?{" "}
             <Link
-              to="/user/me"
-              className="link text-blue-600 font-lato cursor-pointer"
+              to="/login"
+              className="link text-secondary-600 hover:text-secondary-700 font-lato cursor-pointer"
             >
               {" "}
-              profile
+              Login
             </Link>
           </p>
         </form>

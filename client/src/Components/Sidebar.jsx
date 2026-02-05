@@ -21,12 +21,12 @@ const SidebarItem = ({ to, icon, label, onClick, closeDrawer, location }) => {
           flex items-center gap-4 px-4 py-3 rounded-lg
           transition-all duration-300 ease-in-out
           ${isActive
-            ? "bg-gradient-to-r from-purple-500 to-indigo-600 text-white shadow-lg"
+            ? "bg-gradient-to-r from-primary-500 to-primary-600 text-white shadow-lg"
             : "text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
           }
         `}
       >
-        <span className={`text-xl ${isActive ? "text-yellow-300" : ""}`}>
+        <span className={`text-xl ${isActive ? "text-accent-300" : ""}`}>
           {icon}
         </span>
         <span className="font-semibold">{label}</span>

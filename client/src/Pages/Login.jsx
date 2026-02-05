@@ -107,6 +107,14 @@ export default function Login() {
               onChange={handleUserInput}
               value={loginData.password}
             />
+            <div className="flex justify-end mt-2">
+              <Link 
+                to="/user/profile/reset-password"
+                className="text-sm text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 transition-colors"
+              >
+                Forgot Password?
+              </Link>
+            </div>
           </motion.div>
 
           {/* submit btn */}

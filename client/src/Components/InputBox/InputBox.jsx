@@ -14,7 +14,7 @@ export default function InputBox({
     <div className={`flex flex-col gap-2 ${className}`}>
       <label
         htmlFor={name}
-        className={`font-[500] text-xl text-blue-600 dark:text-white font-lato`}
+        className={`font-[500] text-xl text-primary-600 dark:text-white font-lato`}
       >
         {label}
       </label>
@@ -23,7 +23,7 @@ export default function InputBox({
         name={name}
         id={name}
         placeholder={placeholder}
-        className={`bg-transparent  text-lg font-inter px-3 py-2 border border-gray-300 text-gray-600 dark:text-slate-50 focus:border-[#3b38dd]  dark:focus:border-[#fffc5d]`}
+        className={`bg-transparent  text-lg font-inter px-3 py-2 border border-gray-300 text-gray-600 dark:text-slate-50 focus:border-primary-600  dark:focus:border-secondary-400`}
         onChange={onChange}
         value={value || ""}
         disabled={disabled}

@@ -34,9 +34,9 @@ const magneticPull = {
 const aiGlowPulse = {
   animate: {
     boxShadow: [
-      "0 0 0px rgba(6,182,212,0)",
-      "0 0 20px rgba(6,182,212,0.4)",
-      "0 0 0px rgba(6,182,212,0)"
+      "0 0 0px rgba(139,92,246,0)",
+      "0 0 20px rgba(139,92,246,0.4)",
+      "0 0 0px rgba(139,92,246,0)"
     ],
     transition: {
       duration: 3,
@@ -71,10 +71,10 @@ const Cursor = ({ from = { x: 0, y: 0 }, to = { x: 0, y: 0 }, delay = 0.5, durat
       y: { duration: duration, ease: "easeInOut", delay },
       scale: clickAt ? { delay: delay + duration * clickAt, duration: 0.3 } : {}
     }}
-    className="absolute z-50 pointer-events-none drop-shadow-[0_0_15px_rgba(59,130,246,0.8)]"
+    className="absolute z-50 pointer-events-none drop-shadow-[0_0_15px_rgba(139,92,246,0.8)]"
   >
     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M3 3L10.07 19.97L12.58 12.58L19.97 10.07L3 3Z" fill="#0F172A" stroke="#38BDF8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M3 3L10.07 19.97L12.58 12.58L19.97 10.07L3 3Z" fill="#0F172A" stroke="#ec4899" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
     </svg>
   </motion.div>
 );
@@ -89,7 +89,7 @@ const Particle = ({ delay }) => (
       x: [0, (Math.random() - 0.5) * 100] 
     }}
     transition={{ duration: 3, repeat: Infinity, delay: delay, ease: "easeOut" }}
-    className="absolute w-1 h-1 bg-cyan-400 rounded-full shadow-[0_0_10px_rgba(34,211,238,0.8)]"
+    className="absolute w-1 h-1 bg-secondary-400 rounded-full shadow-[0_0_10px_rgba(236,72,153,0.8)]"
     style={{ left: `${50 + (Math.random() - 0.5) * 20}%`, top: `${50 + (Math.random() - 0.5) * 20}%` }}
   />
 );
@@ -239,14 +239,14 @@ const OpeningScene = () => (
       transition={{ duration: 2, ease: "easeOut" }}
       className="relative z-10 text-center"
     >
-      <div className="w-32 h-32 mx-auto mb-8 bg-gradient-to-tr from-cyan-500 to-blue-600 rounded-3xl flex items-center justify-center shadow-[0_0_60px_rgba(6,182,212,0.5)] rotate-3">
+      <div className="w-32 h-32 mx-auto mb-8 bg-gradient-to-tr from-primary-500 to-secondary-600 rounded-3xl flex items-center justify-center shadow-[0_0_60px_rgba(139,92,246,0.5)] rotate-3">
         <FaGraduationCap className="text-6xl text-white drop-shadow-lg" />
       </div>
       <motion.h1 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1, duration: 1 }}
-        className="text-5xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-100 to-white tracking-tighter mb-4"
+        className="text-5xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-primary-100 to-white tracking-tighter mb-4"
       >
         LMS PRO
       </motion.h1>
@@ -254,7 +254,7 @@ const OpeningScene = () => (
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.8 }}
         transition={{ delay: 2, duration: 1 }}
-        className="text-xl text-cyan-200 font-light tracking-[0.2em] uppercase"
+        className="text-xl text-primary-200 font-light tracking-[0.2em] uppercase"
       >
         Your Learning Journey Starts Here
       </motion.p>
@@ -270,39 +270,39 @@ const LoginScene = () => (
       className="relative w-full max-w-lg bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-10 shadow-2xl"
       style={{ transformStyle: 'preserve-3d', transform: 'perspective(1000px) rotateY(-5deg)' }}
     >
-      <div className="absolute -top-20 -left-20 w-60 h-60 bg-blue-500/20 rounded-full blur-[80px]" />
-      <div className="absolute -bottom-20 -right-20 w-60 h-60 bg-purple-500/20 rounded-full blur-[80px]" />
+      <div className="absolute -top-20 -left-20 w-60 h-60 bg-primary-500/20 rounded-full blur-[80px]" />
+                <div className="absolute -bottom-20 -right-20 w-60 h-60 bg-secondary-500/20 rounded-full blur-[80px]" />
       
       <motion.div variants={staggerFast} initial="hidden" animate="show" className="relative z-10 space-y-6">
         <motion.div variants={fadeInUp} className="text-center">
-          <div className="w-12 h-12 bg-blue-500 rounded-xl mx-auto mb-4 flex items-center justify-center shadow-[0_0_20px_rgba(59,130,246,0.5)]">
+          <div className="w-12 h-12 bg-primary-500 rounded-xl mx-auto mb-4 flex items-center justify-center shadow-[0_0_20px_rgba(139,92,246,0.5)]">
             <FaFingerprint className="text-white text-xl" />
           </div>
           <h2 className="text-2xl font-bold text-white mb-1">Welcome Back</h2>
-          <p className="text-blue-200/60 text-sm">Secure Neural Access</p>
+          <p className="text-primary-200/60 text-sm">Secure Neural Access</p>
         </motion.div>
 
         <motion.div variants={fadeInUp} className="space-y-4">
           <motion.div whileHover="hover" variants={magneticPull} className="group relative">
-            <FiMail className="absolute left-4 top-4 text-blue-400 group-hover:text-cyan-300 transition-colors" />
+            <FiMail className="absolute left-4 top-4 text-primary-400 group-hover:text-secondary-300 transition-colors" />
             <motion.input 
               variants={aiGlowPulse}
               animate="animate"
               disabled type="text" value="alex.designer@lms.pro" 
-              className="w-full bg-black/40 border border-white/10 rounded-xl py-3 pl-12 text-white placeholder-white/20 focus:outline-none focus:border-cyan-400/50 transition-all shadow-inner" 
+              className="w-full bg-black/40 border border-white/10 rounded-xl py-3 pl-12 text-white placeholder-white/20 focus:outline-none focus:border-secondary-400/50 transition-all shadow-inner" 
             />
           </motion.div>
           <motion.div whileHover="hover" variants={magneticPull} className="group relative">
-            <FiLock className="absolute left-4 top-4 text-blue-400 group-hover:text-cyan-300 transition-colors" />
+            <FiLock className="absolute left-4 top-4 text-primary-400 group-hover:text-secondary-300 transition-colors" />
             <input disabled type="password" value="••••••••••••" className="w-full bg-black/40 border border-white/10 rounded-xl py-3 pl-12 text-white focus:outline-none transition-all shadow-inner" />
           </motion.div>
         </motion.div>
 
         <motion.button
           variants={fadeInUp}
-          animate={{ boxShadow: ['0 0 0px rgba(59,130,246,0)', '0 0 20px rgba(59,130,246,0.5)', '0 0 0px rgba(59,130,246,0)'] }}
+          animate={{ boxShadow: ['0 0 0px rgba(139,92,246,0)', '0 0 20px rgba(139,92,246,0.5)', '0 0 0px rgba(139,92,246,0)'] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="w-full bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-bold py-4 rounded-xl shadow-lg relative overflow-hidden group"
+          className="w-full bg-gradient-to-r from-primary-600 to-secondary-500 text-white font-bold py-4 rounded-xl shadow-lg relative overflow-hidden group"
         >
           <span className="relative z-10 flex items-center justify-center gap-2">Login <FiArrowRight /></span>
           <motion.div 
@@ -331,7 +331,7 @@ const DashboardScene = () => (
       {/* Sidebar Hologram */}
       <motion.div variants={fadeInUp} className="col-span-3 bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-6 flex flex-col gap-6 shadow-[0_0_30px_rgba(0,0,0,0.3)]">
         <div className="flex items-center gap-4">
-          <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-blue-500 p-0.5">
+          <div className="w-12 h-12 rounded-full bg-gradient-to-br from-secondary-500 to-primary-500 p-0.5">
             <div className="w-full h-full rounded-full bg-black flex items-center justify-center">
               <span className="text-white font-bold">AM</span>
             </div>
@@ -346,21 +346,21 @@ const DashboardScene = () => (
             <motion.div 
               key={item} 
               animate={i === 1 ? { 
-                backgroundColor: ["rgba(255,255,255,0)", "rgba(37,99,235,0.2)"],
-                color: ["rgba(255,255,255,0.6)", "#60A5FA"],
-                borderColor: ["rgba(0,0,0,0)", "rgba(59,130,246,0.3)"]
+                backgroundColor: ["rgba(255,255,255,0)", "rgba(139,92,246,0.2)"],
+                color: ["rgba(255,255,255,0.6)", "#a78bfa"],
+                borderColor: ["rgba(0,0,0,0)", "rgba(139,92,246,0.3)"]
               } : i === 0 ? {
-                backgroundColor: ["rgba(37,99,235,0.2)", "rgba(255,255,255,0)"],
-                color: ["#60A5FA", "rgba(255,255,255,0.6)"],
-                borderColor: ["rgba(59,130,246,0.3)", "rgba(0,0,0,0)"]
+                backgroundColor: ["rgba(139,92,246,0.2)", "rgba(255,255,255,0)"],
+                color: ["#a78bfa", "rgba(255,255,255,0.6)"],
+                borderColor: ["rgba(139,92,246,0.3)", "rgba(0,0,0,0)"]
               } : {}}
               transition={{ delay: 5.5, duration: 0.3 }}
-              className={`p-3 rounded-xl flex items-center gap-3 border border-transparent ${i === 0 ? 'bg-blue-600/20 text-blue-400 border-blue-500/30' : 'text-white/60'}`}
+              className={`p-3 rounded-xl flex items-center gap-3 border border-transparent ${i === 0 ? 'bg-primary-600/20 text-primary-400 border-primary-500/30' : 'text-white/60'}`}
             >
               <motion.div 
-                animate={i === 0 ? { opacity: [1, 0] } : i === 1 ? { opacity: [0, 1], backgroundColor: ["#60A5FA", "#60A5FA"], boxShadow: ["0 0 0px", "0 0 10px rgba(59,130,246,1)"] } : {}}
+                animate={i === 0 ? { opacity: [1, 0] } : i === 1 ? { opacity: [0, 1], backgroundColor: ["#a78bfa", "#a78bfa"], boxShadow: ["0 0 0px", "0 0 10px rgba(139,92,246,1)"] } : {}}
                 transition={{ delay: 5.5, duration: 0.3 }}
-                className={`w-2 h-2 rounded-full ${i === 0 ? 'bg-blue-400 shadow-[0_0_10px_rgba(59,130,246,1)]' : 'bg-transparent'}`} 
+                className={`w-2 h-2 rounded-full ${i === 0 ? 'bg-primary-400 shadow-[0_0_10px_rgba(139,92,246,1)]' : 'bg-transparent'}`} 
               />
               {item}
             </motion.div>
@@ -386,9 +386,9 @@ const DashboardScene = () => (
         {/* Floating Cards */}
         <div className="grid grid-cols-3 gap-6">
           {[
-            { label: 'Weekly Progress', value: '78%', color: 'from-cyan-500 to-blue-500', icon: <FiActivity /> },
-            { label: 'Active Courses', value: '04', color: 'from-purple-500 to-pink-500', icon: <FiLayers /> },
-            { label: 'Certificates', value: '12', color: 'from-amber-500 to-orange-500', icon: <FiAward /> },
+            { label: 'Weekly Progress', value: '78%', color: 'from-primary-500 to-secondary-500', icon: <FiActivity /> },
+            { label: 'Active Courses', value: '04', color: 'from-secondary-500 to-accent-500', icon: <FiLayers /> },
+            { label: 'Certificates', value: '12', color: 'from-accent-500 to-primary-500', icon: <FiAward /> },
           ].map((stat, i) => (
             <motion.div 
               key={i}
@@ -411,11 +411,11 @@ const DashboardScene = () => (
            <div>
              <h3 className="text-xl font-bold text-white mb-2">Latest Certification</h3>
              <p className="text-white/60 text-sm mb-4">Advanced 3D Architecture</p>
-             <div className="px-4 py-2 bg-amber-500/20 text-amber-400 border border-amber-500/50 rounded-lg text-xs inline-flex items-center gap-2">
+             <div className="px-4 py-2 bg-accent-500/20 text-accent-400 border border-accent-500/50 rounded-lg text-xs inline-flex items-center gap-2">
                <FiAward /> VERIFIED
              </div>
            </div>
-           <div className="w-32 h-24 bg-gradient-to-br from-amber-400 to-orange-600 rounded-lg shadow-lg flex items-center justify-center relative">
+           <div className="w-32 h-24 bg-gradient-to-br from-accent-400 to-accent-600 rounded-lg shadow-lg flex items-center justify-center relative">
               <FiAward className="text-4xl text-white" />
               <div className="absolute inset-0 bg-white/20 blur-lg rounded-lg animate-pulse" />
            </div>
@@ -431,7 +431,7 @@ const CoursesScene = () => (
     {/* Cursor targets the center card's Preview button - adjusted coordinates for better visibility */}
     <Cursor from={{ x: 900, y: 600 }} to={{ x: 700, y: 320 }} delay={1.5} duration={1.5} clickAt={1} />
     
-    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-blue-600/20 blur-[120px] rounded-full" />
+    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-primary-600/20 blur-[120px] rounded-full" />
     
     <motion.div 
       className="flex gap-8 perspective-1000 items-center"
@@ -448,11 +448,11 @@ const CoursesScene = () => (
           key={i}
           animate={i === 1 ? { scale: 1.15, zIndex: 10, y: -20, rotateY: 0 } : { scale: 0.9, opacity: 0.6, rotateY: i === 0 ? 15 : -15 }}
           transition={{ duration: 1 }}
-          className={`w-80 bg-[#162032] border ${i === 1 ? 'border-cyan-400/50 shadow-[0_0_50px_rgba(34,211,238,0.2)]' : 'border-white/10'} rounded-3xl overflow-hidden flex-shrink-0 relative group`}
+          className={`w-80 bg-[#162032] border ${i === 1 ? 'border-primary-400/50 shadow-[0_0_50px_rgba(139,92,246,0.2)]' : 'border-white/10'} rounded-3xl overflow-hidden flex-shrink-0 relative group`}
         >
           {/* Animated Card Cover */}
           <div className="h-40 bg-slate-900 relative overflow-hidden group-hover:scale-105 transition-transform duration-700">
-            <div className={`absolute inset-0 bg-gradient-to-br ${i === 1 ? 'from-cyan-500/20 to-blue-600/20' : 'from-purple-500/10 to-pink-500/10'}`} />
+            <div className={`absolute inset-0 bg-gradient-to-br ${i === 1 ? 'from-primary-500/20 to-secondary-600/20' : 'from-secondary-500/10 to-accent-500/10'}`} />
             
             {/* Simulated Content Animations - Made Bolder */}
             {course.type === '3d' && (
@@ -460,28 +460,28 @@ const CoursesScene = () => (
                 <motion.div 
                   animate={{ rotateX: 360, rotateY: 360 }}
                   transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-                  className="w-16 h-16 border-4 border-cyan-400 rounded-xl transform-style-3d shadow-[0_0_30px_rgba(34,211,238,0.6)] bg-cyan-400/10"
+                  className="w-16 h-16 border-4 border-secondary-400 rounded-xl transform-style-3d shadow-[0_0_30px_rgba(236,72,153,0.6)] bg-secondary-400/10"
                 />
                 <motion.div 
                   animate={{ rotateX: -360, rotateY: -360 }}
                   transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-                  className="absolute w-24 h-24 border-2 border-blue-500 rounded-full opacity-60"
+                  className="absolute w-24 h-24 border-2 border-primary-500 rounded-full opacity-60"
                 />
               </div>
             )}
 
             {course.type === 'code' && (
               <div className="p-4 space-y-3 opacity-80 flex flex-col justify-center h-full">
-                 <motion.div animate={{ width: ["60%", "80%", "60%"] }} transition={{ duration: 2, repeat: Infinity }} className="h-2 bg-blue-500 rounded-full shadow-[0_0_10px_rgba(59,130,246,0.5)]" />
-                 <motion.div animate={{ width: ["40%", "60%", "40%"] }} transition={{ duration: 3, repeat: Infinity }} className="h-2 bg-purple-500 rounded-full shadow-[0_0_10px_rgba(168,85,247,0.5)]" />
-                 <motion.div animate={{ width: ["70%", "50%", "70%"] }} transition={{ duration: 2.5, repeat: Infinity }} className="h-2 bg-cyan-500 rounded-full shadow-[0_0_10px_rgba(6,182,212,0.5)]" />
+                 <motion.div animate={{ width: ["60%", "80%", "60%"] }} transition={{ duration: 2, repeat: Infinity }} className="h-2 bg-primary-500 rounded-full shadow-[0_0_10px_rgba(139,92,246,0.5)]" />
+                <motion.div animate={{ width: ["40%", "60%", "40%"] }} transition={{ duration: 3, repeat: Infinity }} className="h-2 bg-secondary-500 rounded-full shadow-[0_0_10px_rgba(236,72,153,0.5)]" />
+                 <motion.div animate={{ width: ["70%", "50%", "70%"] }} transition={{ duration: 2.5, repeat: Infinity }} className="h-2 bg-accent-500 rounded-full shadow-[0_0_10px_rgba(249,115,22,0.5)]" />
               </div>
             )}
 
              {course.type === 'ui' && (
               <div className="absolute inset-0 flex items-center justify-center gap-3">
-                 <motion.div animate={{ y: [-8, 8, -8] }} transition={{ duration: 2, repeat: Infinity }} className="w-10 h-16 bg-pink-500 rounded-xl border-2 border-pink-400 shadow-[0_0_15px_rgba(236,72,153,0.5)]" />
-                 <motion.div animate={{ y: [8, -8, 8] }} transition={{ duration: 2.5, repeat: Infinity }} className="w-10 h-16 bg-purple-500 rounded-xl border-2 border-purple-400 shadow-[0_0_15px_rgba(168,85,247,0.5)]" />
+                 <motion.div animate={{ y: [-8, 8, -8] }} transition={{ duration: 2, repeat: Infinity }} className="w-10 h-16 bg-accent-500 rounded-xl border-2 border-pink-400 shadow-[0_0_15px_rgba(236,72,153,0.5)]" />
+                <motion.div animate={{ y: [8, -8, 8] }} transition={{ duration: 2.5, repeat: Infinity }} className="w-10 h-16 bg-secondary-500 rounded-xl border-2 border-purple-400 shadow-[0_0_15px_rgba(168,85,247,0.5)]" />
               </div>
             )}
 
@@ -854,7 +854,7 @@ const CertificationScene = () => (
          </motion.div>
          
          <p className="text-gray-600">Has successfully mastered</p>
-         <h3 className="text-xl font-bold text-blue-600 mt-2">Advanced 3D Architecture Systems</h3>
+         <h3 className="text-xl font-bold text-primary-600 mt-2">Advanced 3D Architecture Systems</h3>
        </div>
 
        <div className="relative z-10 w-full flex justify-between items-end mt-8">

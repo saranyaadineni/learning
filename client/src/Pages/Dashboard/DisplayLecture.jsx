@@ -95,7 +95,7 @@ export default function DisplayLecture() {
 
   return (
     <Layout hideFooter={true} hideNav={true} hideBar={true}>
-      <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50/40 to-pink-50/30 dark:from-slate-900 dark:via-purple-900/20 dark:to-indigo-900/30">
+      <div className="min-h-screen bg-gradient-to-br from-primary-50 via-secondary-50/40 to-accent-50/30 dark:from-slate-900 dark:via-primary-900/20 dark:to-secondary-900/30">
         {/* Header */}
         <div className="bg-white/90 dark:bg-slate-800/90 backdrop-blur-xl border-b border-white/20 dark:border-slate-700/30 shadow-lg">
           <div className="max-w-7xl mx-auto px-6 py-5">
@@ -117,7 +117,7 @@ export default function DisplayLecture() {
 
               {/* Center - Title */}
               <div className="flex-1 text-center">
-                <h1 className="text-3xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                <h1 className="text-3xl font-bold bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
                   {showVideo ? `${currentVideo + 1}. ${lectures?.[currentVideo]?.title}` : state?.title}
                 </h1>
                 <p className="text-slate-600 dark:text-slate-300 mt-1 text-sm font-medium">
@@ -231,7 +231,7 @@ export default function DisplayLecture() {
                     </div>
 
                     <div className="flex items-center justify-between text-sm">
-                      <span className="text-indigo-100">
+                      <span className="text-primary-100">
                         {completedLectures} of {totalLectures} lectures completed
                       </span>
                       <span className="text-yellow-200 font-semibold">
@@ -244,21 +244,21 @@ export default function DisplayLecture() {
 
               {/* Lectures Vertical List */}
               <motion.div
-                className="relative bg-gradient-to-br from-white via-blue-50/30 to-indigo-50/50 dark:from-slate-800/80 dark:via-slate-800/60 dark:to-slate-700/40 backdrop-blur-xl rounded-3xl border border-white/40 dark:border-slate-600/30 shadow-2xl overflow-hidden"
+                className="relative bg-gradient-to-br from-white via-primary-50/30 to-secondary-50/50 dark:from-slate-800/80 dark:via-slate-800/60 dark:to-slate-700/40 backdrop-blur-xl rounded-3xl border border-white/40 dark:border-slate-600/30 shadow-2xl overflow-hidden"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
                 {/* Background decorative elements */}
-                <div className="absolute top-0 left-0 w-40 h-40 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full -translate-x-20 -translate-y-20"></div>
-                <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-pink-400/20 to-indigo-400/20 rounded-full translate-x-16 translate-y-16"></div>
+                <div className="absolute top-0 left-0 w-40 h-40 bg-gradient-to-br from-primary-400/20 to-secondary-400/20 rounded-full -translate-x-20 -translate-y-20"></div>
+                <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-secondary-400/20 to-accent-400/20 rounded-full translate-x-16 translate-y-16"></div>
 
                 <div className="relative z-10">
                   <div className="p-8 border-b border-slate-200/60 dark:border-slate-600/30">
                     <div className="flex items-center justify-between">
                       <div>
                         <h2 className="text-2xl font-bold bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-300 bg-clip-text text-transparent flex items-center gap-3">
-                          <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center shadow-lg">
+                          <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-600 rounded-2xl flex items-center justify-center shadow-lg">
                             <FaBookOpen className="text-white text-lg" />
                           </div>
                           Course Content
@@ -319,7 +319,7 @@ export default function DisplayLecture() {
                               <div className="flex-1 pr-4">
                                 <h3 className={`text-xl font-bold mb-3 line-clamp-2 transition-all duration-300 ${
                                   currentVideo === idx
-                                    ? "text-blue-700 dark:text-blue-300"
+                                    ? "text-primary-700 dark:text-primary-300"
                                     : userProgress?.lecturesCompleted?.includes(lecture?._id)
                                     ? "text-slate-900 dark:text-white"
                                     : "text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400"
@@ -330,12 +330,12 @@ export default function DisplayLecture() {
                                 {/* Enhanced metadata */}
                                 <div className="flex flex-wrap items-center gap-4 text-sm text-slate-600 dark:text-slate-400">
                                   <div className="flex items-center gap-2 bg-slate-100 dark:bg-slate-700/50 px-3 py-1 rounded-full">
-                                    <FaVideo className="w-4 h-4 text-blue-500" />
+                                    <FaVideo className="w-4 h-4 text-primary-500" />
                                     <span className="font-medium">Lecture {idx + 1}</span>
                                   </div>
-                                  <div className="flex items-center gap-2 bg-blue-50 dark:bg-blue-900/20 px-3 py-1 rounded-full">
-                                    <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
-                                    <span className="font-medium text-blue-700 dark:text-blue-300">Video Content</span>
+                                  <div className="flex items-center gap-2 bg-primary-50 dark:bg-primary-900/20 px-3 py-1 rounded-full">
+                                    <div className="w-2 h-2 bg-primary-500 rounded-full animate-pulse"></div>
+                                    <span className="font-medium text-primary-700 dark:text-primary-300">Video Content</span>
                                   </div>
                                 </div>
                               </div>
@@ -522,7 +522,7 @@ export default function DisplayLecture() {
               <div className="bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm rounded-2xl p-8 border border-white/30 dark:border-slate-700/50">
                 <div className="flex items-center justify-between mb-6">
                   <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">
+                    <div className="w-8 h-8 bg-primary-600 rounded-full flex items-center justify-center text-white font-bold">
                       {currentVideo + 1}
                     </div>
                     <h2 className="text-2xl font-bold text-slate-900 dark:text-white">

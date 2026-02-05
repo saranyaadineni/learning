@@ -91,9 +91,9 @@ export default function Profile() {
     <Layout hideFooter={true}>
       <section className="min-h-screen py-12 px-4 lg:px-8 relative overflow-hidden">
         {/* Background elements */}
-        <div className="absolute top-10 left-10 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-5 animate-pulse-slow"></div>
-        <div className="absolute bottom-10 right-10 w-48 h-48 bg-green-500 rounded-full mix-blend-multiply filter blur-3xl opacity-5 animate-pulse-slow"></div>
-        <div className="absolute top-1/2 left-1/2 w-56 h-56 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-5 animate-pulse-slow"></div>
+        <div className="absolute top-10 left-10 w-64 h-64 bg-primary-500 rounded-full mix-blend-multiply filter blur-3xl opacity-5 animate-pulse-slow"></div>
+        <div className="absolute bottom-10 right-10 w-48 h-48 bg-secondary-500 rounded-full mix-blend-multiply filter blur-3xl opacity-5 animate-pulse-slow"></div>
+        <div className="absolute top-1/2 left-1/2 w-56 h-56 bg-accent-500 rounded-full mix-blend-multiply filter blur-3xl opacity-5 animate-pulse-slow"></div>
 
         <div className="max-w-6xl mx-auto relative z-10">
           {/* Header */}
@@ -104,7 +104,7 @@ export default function Profile() {
             transition={{ duration: 0.8 }}
           >
             <motion.div
-              className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-blue-500 to-green-500 rounded-full mb-6"
+              className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full mb-6"
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ duration: 0.6, delay: 0.2, type: "spring" }}
@@ -133,7 +133,7 @@ export default function Profile() {
             <div className="flex justify-center items-center mb-8">
               <div className="relative">
                 <div
-                  className="w-24 h-24 rounded-full overflow-hidden cursor-pointer ring-4 ring-blue-500/20 hover:ring-blue-500/40 transition-all duration-300"
+                  className="w-24 h-24 rounded-full overflow-hidden cursor-pointer ring-4 ring-primary-500/20 hover:ring-primary-500/40 transition-all duration-300"
                   onClick={() => avatarInputRef.current.click()}
                 >
                   {userData?.avatar?.secure_url || userInput.previewImage ? (
@@ -178,7 +178,7 @@ export default function Profile() {
                       <IoIosLock /> Change password
                     </button>
                     <button
-                      className="text-red-600 dark:text-red-300 w-full flex items-center gap-3 px-4 py-2 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors text-sm"
+                      className="text-secondary-600 dark:text-secondary-300 w-full flex items-center gap-3 px-4 py-2 hover:bg-secondary-50 dark:hover:bg-secondary-900/20 transition-colors text-sm"
                       onClick={() => navigate("reset-password")}
                     >
                       <IoIosRefresh /> Reset password
@@ -234,7 +234,7 @@ export default function Profile() {
             <motion.button
               type="submit"
               disabled={!isChanged || isUpdating}
-              className="mt-6 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold py-3 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center space-x-2 text-lg"
+              className="mt-6 bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white font-semibold py-3 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center space-x-2 text-lg"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >

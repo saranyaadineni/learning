@@ -85,19 +85,19 @@ function AboutUs() {
       id: 1,
       title: "Global Learning",
       description: "Connecting students from all over the world to quality education.",
-      icon: <BiWorld className="text-4xl text-blue-500" />,
+      icon: <BiWorld className="text-4xl text-primary-500" />,
     },
     {
       id: 2,
       title: "Expert Guidance",
       description: "Learn from industry experts who are passionate about teaching.",
-      icon: <FaChalkboardTeacher className="text-4xl text-green-500" />,
+      icon: <FaChalkboardTeacher className="text-4xl text-secondary-500" />,
     },
     {
       id: 3,
       title: "Affordable Access",
       description: "Quality education shouldn't break the bank. We make it accessible.",
-      icon: <FaBook className="text-4xl text-purple-500" />,
+      icon: <FaBook className="text-4xl text-accent-500" />,
     },
   ];
 
@@ -129,11 +129,11 @@ function AboutUs() {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     href="/courses"
-                    className="rounded-md bg-purple-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-purple-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600 transition-all duration-300"
+                    className="rounded-md bg-primary-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 transition-all duration-300"
                   >
                     Explore Courses
                   </motion.a>
-                  <a href="/contact" className="text-sm font-semibold leading-6 text-gray-900 dark:text-white hover:text-purple-500 transition-colors">
+                  <a href="/contact" className="text-sm font-semibold leading-6 text-gray-900 dark:text-white hover:text-primary-500 transition-colors">
                     Contact Us <span aria-hidden="true">→</span>
                   </a>
                 </div>
@@ -147,7 +147,7 @@ function AboutUs() {
                 className="lg:w-1/2 flex justify-center"
               >
                 <div className="relative">
-                  <div className="absolute -inset-1 rounded-lg bg-gradient-to-r from-purple-600 to-pink-600 opacity-30 blur-2xl"></div>
+                  <div className="absolute -inset-1 rounded-lg bg-gradient-to-r from-primary-600 to-secondary-600 opacity-30 blur-2xl"></div>
                   <img
                     src={aboutMainImage}
                     alt="Team working"
@@ -173,7 +173,7 @@ function AboutUs() {
                       transition={{ duration: 0.5, delay: idx * 0.1 }}
                       className="mx-auto flex max-w-xs min-w-[180px] flex-col gap-y-4"
                     >
-                      <div className="text-5xl text-purple-600 dark:text-purple-400 mx-auto flex items-center justify-center bg-purple-100 dark:bg-purple-900/30 w-20 h-20 rounded-full">
+                      <div className="text-5xl text-primary-600 dark:text-primary-400 mx-auto flex items-center justify-center bg-primary-100 dark:bg-primary-900/30 w-20 h-20 rounded-full">
                         {stat.icon}
                       </div>
                       <dt className="text-base leading-7 text-gray-600 dark:text-gray-400">{stat.label}</dt>
